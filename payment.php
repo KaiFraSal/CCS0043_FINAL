@@ -5,22 +5,31 @@ if (!isLoggedIn()) header("Location: login.php");
 
 $user = $_SESSION['user_id'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $amount = $_POST['amount'];
+$userQuery = $conn->query("SELECT balance, current_bill FROM users WHERE username='$user'");
+$userData = $userQuery->fetch_assoc();
 
-    $userCheck = $conn->query("SELECT balance FROM users WHERE username='$user'");
-    $row = $userCheck->fetch_assoc();
-    
-    if ($row['balance'] >= $amount) {
-        $conn->query("UPDATE users SET balance = balance - $amount WHERE username='$user'");
-        $conn->query("UPDATE users SET current_bill = current_bill - $amount WHERE username='$user'");
+$balance = $userData['balance'];
+$currentBill = $userData['current_bill'];
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $inputAmount = floatval($_POST['amount']);
+
+    if ($currentBill == 0) {
+        $error = "There is no outstanding bill to pay.";
+    } elseif ($inputAmount != $currentBill) {
+        $error = "You must pay exactly ₱" . number_format($currentBill, 2);
+    } elseif ($balance < $inputAmount) {
+        $error = "Insufficient balance. Your balance is ₱" . number_format($balance, 2);
+    } else {
+        $newBalance = $balance - $inputAmount;
+        $conn->query("UPDATE users SET balance = $newBalance, current_bill = 0 WHERE username='$user'");
+
         $ref = generateReference();
-        $conn->query("INSERT INTO receipts (username, amount, ref) VALUES ('$user', $amount, '$ref')");
+        $conn->query("INSERT INTO receipts (username, amount, ref) VALUES ('$user', $inputAmount, '$ref')");
+
         header("Location: receipt.php?ref=$ref");
         exit;
-
-    } else {
-        echo "Insufficient balance.";
     }
 }
 ?>
@@ -29,14 +38,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
-    <title>Make Payment</title>
+    <title>Pay Current Bill</title>
 </head>
 <body>
-    <form method="POST">
-        <h2>Enter Payment Amount:</h2>
-        <input type="number" name="amount" required>
-        <button type="submit">Pay</button>
-    </form>
-    <a href="menu.php"><button>Back to Menu</button></a>
+    <div class="container">
+        <h2>Water Bill Payment</h2>
+        <p><strong>Current Bill:</strong> ₱<?= number_format($currentBill, 2) ?></p>
+        <p><strong>Available Balance:</strong> ₱<?= number_format($balance, 2) ?></p>
+
+        <?php if (!empty($error)): ?>
+            <p style="color:red;"><?= $error ?></p>
+        <?php endif; ?>
+
+        <form method="POST">
+            <label for="amount">Enter Exact Payment:</label>
+            <input type="number" step="0.01" name="amount" id="amount" required>
+            <button type="submit">Pay Now</button>
+        </form>
+
+        <br>
+        <a href="menu.php"><button>Back to Menu</button></a>
+    </div>
 </body>
 </html>

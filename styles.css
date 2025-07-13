@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+nav{
+    margin-top: 75px;
+    margin-left: 1000px;
+}
+
 nav ul {
     display: flex;
     justify-content: space-around;
@@ -22,10 +27,14 @@ nav ul li a {
     margin: 50px auto;
     padding: 20px;
     width: 50%;
-    font-size: 2em;
+    /* font-size: 2.5em; */
     background-color: #222;
     border-radius: 10px;
 }
+
+/* h1{
+    font-size: 3.5em;
+} */
 
 input, button {
     padding: 10px;

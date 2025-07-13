@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usage = floatval($_POST['usage']);
     $computedBill = $usage * $ratePerCubicMeter;
 
-    $conn->query("UPDATE users SET current_bill = $computedBill WHERE username = '$user'");
+    $conn->query("UPDATE users SET current_bill = current_bill + $computedBill WHERE username = '$user'");
 
     $message = "Usage recorded: {$usage} m³. New bill: ₱" . number_format($computedBill, 2);
 }
