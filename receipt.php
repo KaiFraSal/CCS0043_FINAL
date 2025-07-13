@@ -3,7 +3,6 @@ include 'db.php';
 include 'functions.php';
 if (!isLoggedIn()) header("Location: login.php");
 
-session_start();
 $user = $_SESSION['user_id'];
 
 if (!isset($_GET['ref'])) {

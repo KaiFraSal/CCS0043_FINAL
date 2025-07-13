@@ -3,7 +3,6 @@ include 'db.php';
 include 'functions.php';
 if (!isLoggedIn()) header("Location: login.php");
 
-session_start();
 $user = $_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,5 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="number" name="amount" required>
         <button type="submit">Load</button>
     </form>
+    <a href="menu.php"><button>Back to Menu</button></a>
 </body>
 </html>

@@ -3,7 +3,6 @@ include 'db.php';
 include 'functions.php';
 if (!isLoggedIn()) header("Location: login.php");
 
-session_start();
 $user = $_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($row['balance'] >= $amount) {
         $conn->query("UPDATE users SET balance = balance - $amount WHERE username='$user'");
+        $conn->query("UPDATE users SET current_bill = current_bill - $amount WHERE username='$user'");
         $ref = generateReference();
         $conn->query("INSERT INTO receipts (username, amount, ref) VALUES ('$user', $amount, '$ref')");
         header("Location: receipt.php?ref=$ref");
@@ -37,5 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="number" name="amount" required>
         <button type="submit">Pay</button>
     </form>
+    <a href="menu.php"><button>Back to Menu</button></a>
 </body>
 </html>

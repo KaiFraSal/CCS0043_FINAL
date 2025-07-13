@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($result->num_rows === 1) {
         $_SESSION['user_id'] = $username;
-        header("Location: dashboard.php");
+        header("Location: menu.php");
     } else {
         $error = "Invalid credentials!";
     }
