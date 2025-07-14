@@ -5,18 +5,25 @@
     box-sizing: border-box;
 }
 
-/* Keep your original body settings */
+/* Body and Layout */
 body {
     font-family: Inter, sans-serif;
     background-image: url('../assets/bg_pic_1.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-}
-
-.container{
-    display: flex;
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main layout container */
+.main-container {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 200px); /* Account for footer height */
 }
 
 /* Sidebar (logo image section) */
@@ -29,10 +36,10 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    height: 95dvh;
+    height: 95vh;
     margin-left: 7.5vw;
-    margin-top: 5dvh;
-    margin-bottom: 40px;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -55,17 +62,15 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 30px; /* Add top margin for spacing from top of page */
+    margin-top: 30px;
 }
-
 
 /* NAVIGATION BAR */
 nav {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     margin-bottom: 40px;
 }
-
 
 /* Navigation menu items */
 nav ul {
@@ -77,7 +82,6 @@ nav ul {
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 nav li {
     margin: 0;
@@ -111,7 +115,7 @@ nav a.active {
     flex-direction: column;
     background: linear-gradient(to bottom right, #6594BB, #DDF1F3);
     width: 100%;
-    height: 55dvh;
+    height: 55vh;
     max-width: 1000px;
     padding: 40px;
     border-radius: 0 50px 50px 0;
@@ -124,10 +128,7 @@ nav a.active {
 .main h1 {
     font-size: 6rem;
     font-weight: bold;
-    color: #1e3c72;
-    background: linear-gradient(45deg, #1e3c72, #2a5298);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
 }
 
 .main p {
@@ -171,15 +172,199 @@ nav a.active {
     color: #77B30D;
 }
 
+/* FOOTER STYLES */
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 60px 40px 40px 40px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    width: 100%;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00bcd4, #2196f3, #3f51b5);
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #e3f2fd;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 280px;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-info .year {
+    font-size: 2em;
+    font-weight: bold;
+    color: #64b5f6;
+    margin-bottom: 10px;
+}
+
+.company-info .disclaimer {
+    font-size: 0.85em;
+    color: #b3e5fc;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+    position: relative;
+}
+
+#facebook {
+    background: linear-gradient(135deg, #4267B2, #365899);
+}
+
+#instagram {
+    background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+#youtube {
+    background: linear-gradient(135deg, #FF0000, #cc0000);
+}
+
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .sidebar {
-        display: none;
+        width: 280px;
+        margin-left: 5vw;
+    }
+    
+    .main h1 {
+        font-size: 4.5rem;
+    }
+    
+    .main p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .sidebar {
+        width: 90%;
+        height: 200px;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+    
+    .sidebar > img {
+        padding: 10px;
+    }
+    
+    .content {
+        padding: 20px;
+        margin-top: 0;
     }
 
     .main {
         padding: 20px;
         border-radius: 20px;
+        height: auto;
+        min-height: 300px;
     }
 
     .main h1 {
@@ -191,61 +376,88 @@ nav a.active {
     }
 
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
     }
-
+    
     nav ul {
-        margin-top: 10px;
         flex-wrap: wrap;
         gap: 0.5rem;
+        padding: 10px;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 
     .bottom-button {
         width: 100%;
         border-radius: 20px;
         font-size: 1rem;
-        padding: 12px 0;
+        padding: 15px;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        padding: 40px 20px;
+        margin-top: 20px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2em;
+    }
+    
+    .contact-info {
+        max-width: 100%;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .water-service-badge {
+        position: static;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-footer{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 150px;
-    background-color:  #173B7E;
-    color: white;
-    align-items: center;
-    text-align: center;
-}
-footer p{
-    margin: 0;
-}
-#contact{
-    font-size: 1.5em;
-    font-weight: bold;
-}
-#iconGrid{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    justify-content: center;
-}
-.icon{
-    display: flex;
-    border-radius: 5px;
-    width: 36px;
-    height: 36px;
-    justify-content: center;
-    align-items: center;
-}
-#facebook{
-    background-color: #4267B2;
-}
-#instagram{
-    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
-}
-#youtube{
-    background-color: #FF0000;
+@media (max-width: 480px) {
+    .main h1 {
+        font-size: 2.5rem;
+    }
+    
+    .main p {
+        font-size: 1rem;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1em;
+    }
+    
+    .contact-info {
+        padding: 20px;
+    }
 }
