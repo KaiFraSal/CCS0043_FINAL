@@ -20,23 +20,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/usage.css">
+    <link rel="stylesheet" href="css/usage.css">
     <title>Compute Water Usage</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Enter Monthly Water Usage</h2>
-        <form method="POST">
-            <label for="usage">Water Used (in cubic meters):</label><br>
-            <input type="number" step="0.01" name="usage" id="usage" required>
-            <br><br>
-            <button type="submit">Compute Bill</button>
-        </form>
 
-        <?php if (isset($message)) echo "<p style='margin-top:20px;color:limegreen;'>$message</p>"; ?>
+    <div class="content">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-box"><img src="assets/CCS0043_Finals_Logo.png" alt="logo"></div>
+                <div class="logo-text">
+                    <strong>MayPay</strong><br>
+                    <small>Payment App</small>
+                </div>
+            </div>
 
-        <br>
-        <a href="menu.php"><button>Back to Menu</button></a>
+            <nav>
+                <ul>
+                    <li><a href="menu.php">Home</a></li>
+                    <li><a href="balance.php">Bills</a></li>
+                    <li><a href="usage.php" class="active">Usage</a></li>
+                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="load.php">Load</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="statement">
+                <h1>Monthly Water Usage</h1>
+
+                <?php if (!empty($error)): ?>
+                    <p><?= $error ?></p>
+                <?php endif; ?>
+                <form class="flex-form" method="POST">
+                    <label for="amount">Water Used (in cubic meters):</label>
+                    <input type="number" step="0.01" name="amount" id="amount" required>
+                    <button type="submit" class="pay-btn">Pay Now</button>
+                </form> 
+                <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
