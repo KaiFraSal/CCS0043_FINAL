@@ -6,7 +6,7 @@ if (!isLoggedIn()) header("Location: login.php");
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/menu.css">
     <title>MayPay Menu</title>
 </head>
 <body>
@@ -27,7 +27,7 @@ if (!isLoggedIn()) header("Location: login.php");
         </nav>
 
         <div class="main">
-            <h1>MayPay</h1>
+            <h1>MayPay</h1><br>
             <p>Welcome to your water bill management system.</p>
         </div>
 
