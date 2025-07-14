@@ -21,12 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>MayPay Login</title>
 </head>
 <body>
     <div class="container">
-        <h2>MayPay Login</h2>
+        <h2><span class="blue">May<span class="green">Pay <span class="normal">Login</h2>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
