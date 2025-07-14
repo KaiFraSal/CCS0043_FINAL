@@ -25,18 +25,41 @@ $row = $result->fetch_assoc();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/receipt.css">
+    <link rel="stylesheet" href="css/receipt.css">
     <title>Receipt - MayPay</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Payment Receipt</h2>
-        <p><strong>Username:</strong> <?= htmlspecialchars($row['username']) ?></p>
-        <p><strong>Amount Paid:</strong> ₱<?= number_format($row['amount'], 2) ?></p>
-        <p><strong>Reference No:</strong> <?= htmlspecialchars($row['ref']) ?></p>
-        <p><strong>Date:</strong> <?= $row['date'] ?></p>
-        <br>
-        <a href="menu.php"><button>Back to Menu</button></a>
+    <div class="content">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-box"><img src="assets/CCS0043_Finals_Logo.png" alt="logo"></div>
+                <div class="logo-text">
+                    <strong>MayPay</strong><br>
+                    <small>Payment App</small>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="menu.php">Home</a></li>
+                    <li><a href="balance.php">Bills</a></li>
+                    <li><a href="usage.php">Usage</a></li>
+                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="load.php">Load</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="statement">
+                <h1>Payment Reciept</h1>
+                <div class="form-group"><b>Username:</b> <?=htmlspecialchars($row['username'])?></div>
+                <div class="form-group"><b>Amount Paid:</b> ₱<?=number_format($row['amount'], 2)?></div>
+                <div class="form-group"><b>Reference No:</b> <?=htmlspecialchars($row['ref'])?></div>
+                <div class="form-group"><b>Date:</b> <?=$row['date']?></div>
+                <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

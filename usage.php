@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
                 <form class="flex-form" method="POST">
                     <label for="amount">Water Used (in cubic meters):</label>
-                    <input type="number" step="0.01" name="amount" id="amount" required>
+                    <input type="number" step="0.01" name="usage" id="usage" required>
                     <button type="submit" class="pay-btn">Pay Now</button>
                 </form> 
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
