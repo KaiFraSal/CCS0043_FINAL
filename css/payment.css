@@ -5,13 +5,16 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    height: 100dvh;
+    font-family: Inter, sans-serif;
+    min-height: 100dvh;
     display: flex;
+    flex-direction: column; 
     background-image: url('../assets/bg_pic_1.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 }
+
 
 .sidebar {
     width: 350px;
@@ -51,64 +54,93 @@ body {
     margin-top: 40px;
 }
 
-.logo {
+/* TOP HEADER: LOGO + NAVBAR */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* LOGO */
+.logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-box {
+.logo-img {
     width: 40px;
     height: 40px;
+    object-fit: cover;
     background-color: #111;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.7rem;
     border-radius: 6px;
 }
 
-.logo-box > img{
-    width: 100%;
-    height: 100%;
+.logo-label {
+    font-size: 0.85rem;
+    background-image: linear-gradient(to bottom right, #6594BB, #DDF1F3);
+    padding: 4px 8px;
+    border-radius: 10px;
+    color: #1e3c72;
 }
 
-.logo-text {
-    background-image: linear-gradient(to bottom right, #6594BB, #DDF1F3);
-    padding: 4px;
-    border-radius: 10px;
-    color: white;
-    font-size: 0.85rem;
+/* NAVIGATION */
+nav {
+    display: flex;
+    align-items: center; 
+    justify-content: right;
+    margin-bottom: 0;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    list-style: none;
+    gap: 1rem;
+    padding: 13px 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li a {
+nav li {
+    margin: 0;
+}
+
+nav a {
+    padding: 10px 20px;
     text-decoration: none;
-    color: #ccc;
-    padding: 5px 15px;
-    border-radius: 8px;
+    color: #1e3c72;
+    border-radius: 25px;
     font-weight: 500;
-    transition: 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.6);
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-    background-color: white;
-    color: black;
+nav a:hover {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
 }
+
+nav a.active {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+}
+
 
 .main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-top: 30px; /* pushes it below navbar */
+    padding: 0 40px;
     background-color: transparent;
-    color: white;
 }
+
 
 .main h1 {
     font-size: 2.5rem;
@@ -131,7 +163,6 @@ p {
     margin-bottom: 10px;
     padding: 10px;
     color: white;
-    background-color: rgb(204, 2, 2);
     font-size: 15px;
     font-weight: bold;
     font-style: italic;
@@ -184,3 +215,177 @@ input[type="number"] {
 .submit-btn:hover {
     background-color: #4f7708;
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00bcd4, #2196f3, #3f51b5);
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #e3f2fd;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-info .year {
+    font-size: 2em;
+    font-weight: bold;
+    color: #64b5f6;
+    margin-bottom: 10px;
+}
+
+.company-info .disclaimer {
+    font-size: 0.85em;
+    color: #b3e5fc;
+    font-style: italic;
+}
+
+.social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+    position: relative;
+}
+
+#facebook {
+    background: linear-gradient(135deg, #4267B2, #365899);
+}
+
+#instagram {
+    background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+#youtube {
+    background: linear-gradient(135deg, #FF0000, #cc0000);
+}
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        padding: 30px 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2em;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
