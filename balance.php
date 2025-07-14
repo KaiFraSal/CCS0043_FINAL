@@ -15,12 +15,7 @@ $row = $result->fetch_assoc();
     <title>Check Balance</title>
 </head>
 <body>
-    <!-- Sidebar -->
-
-
-    <!-- Main Content -->
     <div class="content">
-        <!-- Logo and Nav -->
         <div class="header">
             <div class="logo">
                 <div class="logo-box"><img src="assets/Maynilad-Logo.png" alt="logo"></div>
@@ -40,11 +35,7 @@ $row = $result->fetch_assoc();
             </nav>
         </div>
 
-        <!-- Main Card -->
         <div class="main">
-            <div class="sidebar">
-                Text
-            </div>
             <div class="statement">
                 <h1>Water Bill Statement</h1>
                 <div class="form-group">Account Balance: ₱<?= $row['balance'] ?></div>

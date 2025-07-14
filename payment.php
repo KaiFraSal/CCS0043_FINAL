@@ -37,27 +37,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/payment.css">
+    <link rel="stylesheet" href="css/payment.css">
     <title>Pay Current Bill</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Water Bill Payment</h2>
-        <p><strong>Current Bill:</strong> ₱<?= number_format($currentBill, 2) ?></p>
-        <p><strong>Available Balance:</strong> ₱<?= number_format($balance, 2) ?></p>
+    <div class="content">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-box"><img src="assets/Maynilad-Logo.png" alt="logo"></div>
+                <div class="logo-text">
+                    <strong>MayPay</strong><br>
+                    <small>Payment App</small>
+                </div>
+            </div>
 
-        <?php if (!empty($error)): ?>
-            <p style="color:red;"><?= $error ?></p>
-        <?php endif; ?>
+            <nav>
+                <ul>
+                    <li><a href="menu.php">Home</a></li>
+                    <li><a href="balance.php" class="active">Bills</a></li>
+                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
 
-        <form method="POST">
-            <label for="amount">Enter Exact Payment:</label>
-            <input type="number" step="0.01" name="amount" id="amount" required>
-            <button type="submit">Pay Now</button>
-        </form>
+        <div class="main">
+            <div class="statement">
+                <h1>Water Bill Payment</h1>
+                <div class="form-group"><strong>Current Bill:</strong> ₱<?= number_format($currentBill, 2) ?></div>
+                <div class="form-group"><strong>Available Balance:</strong> ₱<?= number_format($balance, 2) ?></div>
 
-        <br>
-        <a href="menu.php"><button>Back to Menu</button></a>
+                <?php if (!empty($error)): ?>
+                    <p style="color:red;"><?= $error ?></p>
+                <?php endif; ?>
+                <form method="POST">
+                    <label for="amount">Enter Exact Payment:</label>
+                    <input type="number" step="0.01" name="amount" id="amount" required>
+                    <button type="submit">Pay Now</button>
+                </form> 
+                <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
