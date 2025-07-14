@@ -7,6 +7,7 @@ if (!isLoggedIn()) header("Location: login.php");
 <html>
 <head>
     <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>MayPay Menu</title>
 </head>
 <body>
@@ -31,7 +32,7 @@ if (!isLoggedIn()) header("Location: login.php");
             <p>Welcome to your water bill management system.</p>
         </div>
 
-        <div class="bottom-button">TEXT</div>
+        <div class="bottom-button">MayPay is a platform for easy and secure Maynilad water bill payments.</div>
     </div>
 </body>
 </html>
