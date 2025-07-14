@@ -8,7 +8,7 @@ html, body {
     height: 100%;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,4 +73,177 @@ p {
     border-radius: 10px;
     font-weight: bold;
     font-style: italic;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00bcd4, #2196f3, #3f51b5);
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #e3f2fd;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-info .year {
+    font-size: 2em;
+    font-weight: bold;
+    color: #64b5f6;
+    margin-bottom: 10px;
+}
+
+.company-info .disclaimer {
+    font-size: 0.85em;
+    color: #b3e5fc;
+    font-style: italic;
+}
+
+.social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+    position: relative;
+}
+
+#facebook {
+    background: linear-gradient(135deg, #4267B2, #365899);
+}
+
+#instagram {
+    background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+#youtube {
+    background: linear-gradient(135deg, #FF0000, #cc0000);
+}
+
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        padding: 30px 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2em;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
 }
