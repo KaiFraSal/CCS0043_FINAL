@@ -11,16 +11,47 @@ $row = $result->fetch_assoc();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/balance.css">
+    <link rel="stylesheet" href="css/balance.css">
     <title>Check Balance</title>
 </head>
 <body>
-    <div class="main">
-        <h1>Water Bill Statement</h1>
-        <h2>Account Balance: ₱<?= $row['balance'] ?></h2>
-        <h2>Current Bill: ₱<?= $row['current_bill'] ?></h2>
+    <!-- Sidebar -->
+
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Logo and Nav -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-box"><img src="assets/Maynilad-Logo.png" alt="logo"></div>
+                <div class="logo-text">
+                    <strong>MayPay</strong><br>
+                    <small>Payment App</small>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="menu.php">Home</a></li>
+                    <li><a href="balance.php" class="active">Bills</a></li>
+                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Card -->
+        <div class="main">
+            <div class="sidebar">
+                Text
+            </div>
+            <div class="statement">
+                <h1>Water Bill Statement</h1>
+                <div class="form-group">Account Balance: ₱<?= $row['balance'] ?></div>
+                <div class="form-group">Current Bill: ₱<?= $row['current_bill'] ?></div>
+                <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
+            </div>
+        </div>
     </div>
-    
-    <a href="menu.php"><button>Back to Menu</button></a>
 </body>
 </html>
