@@ -37,15 +37,15 @@ input[type="number"] {
     padding: 5px;
 }
 
-P {
+p {
     margin-top: 40px;
     padding: 10px;
-    background-color:  #385507;
     color: white;
     border-radius: 10px;
     font-weight: bold;
     font-style: italic;
 }
+
 
 
 button {
