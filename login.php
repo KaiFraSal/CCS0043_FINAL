@@ -18,11 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!-- Simple Login UI -->
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>MayPay Login</title>
 </head>
 <body>

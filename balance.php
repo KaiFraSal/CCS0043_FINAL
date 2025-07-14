@@ -11,7 +11,7 @@ $row = $result->fetch_assoc();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/balance.css">
     <title>Check Balance</title>
 </head>
 <body>
