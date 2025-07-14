@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (isset($message)) echo "<p style='margin-top:20px;color:limegreen;'>$message</p>"; ?>
 
         <br>
-        <a href="menu.php"><button>Back to Dashboard</button></a>
+        <a href="menu.php"><button>Back to Menu</button></a>
     </div>
 </body>
 </html>

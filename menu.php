@@ -11,7 +11,7 @@ if (!isLoggedIn()) header("Location: login.php");
 </head>
 <body>
     <div class="sidebar">
-        <img src="assets/Maynilad-Logo.png" alt="logo">
+        <img src="assets/CCS0043_Finals_Logo_Menu.png" alt="logo">
     </div>
 
     <div class="content">
@@ -27,7 +27,7 @@ if (!isLoggedIn()) header("Location: login.php");
         </nav>
 
         <div class="main">
-            <h1>MayPay</h1><br>
+            <h1><scan class="blue">May<scan class="green">Pay</h1><br>
             <p>Welcome to your water bill management system.</p>
         </div>
 

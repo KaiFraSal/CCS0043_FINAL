@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="content">
         <div class="header">
             <div class="logo">
-                <div class="logo-box"><img src="assets/Maynilad-Logo.png" alt="logo"></div>
+                <div class="logo-box"><img src="assets/CCS0043_Finals_Logo.png" alt="logo"></div>
                 <div class="logo-text">
                     <strong>MayPay</strong><br>
                     <small>Payment App</small>
@@ -69,15 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group"><strong>Available Balance:</strong> ₱<?= number_format($balance, 2) ?></div>
 
                 <?php if (!empty($error)): ?>
-                    <p style="color:red;"><?= $error ?></p>
+                    <p><?= $error ?></p>
                 <?php endif; ?>
                 <form method="POST">
                     <label for="amount">Enter Exact Payment:</label>
                     <input type="number" step="0.01" name="amount" id="amount" required>
-                    <button type="submit">Pay Now</button>
-
-                    <input type="text" name="username" placeholder="Username" required><br>
-                    <button type="submit">Login</button>
+                    <button type="submit" class="pay-btn">Pay Now</button>
                 </form> 
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
             </div>

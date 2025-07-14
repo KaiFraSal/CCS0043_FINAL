@@ -18,7 +18,7 @@ $row = $result->fetch_assoc();
     <div class="content">
         <div class="header">
             <div class="logo">
-                <div class="logo-box"><img src="assets/Maynilad-Logo.png" alt="logo"></div>
+                <div class="logo-box"><img src="assets/CCS0043_Finals_Logo.png" alt="logo"></div>
                 <div class="logo-text">
                     <strong>MayPay</strong><br>
                     <small>Payment App</small>
@@ -39,8 +39,8 @@ $row = $result->fetch_assoc();
         <div class="main">
             <div class="statement">
                 <h1>Water Bill Statement</h1>
-                <div class="form-group">Account Balance: ₱<?= $row['balance'] ?></div>
-                <div class="form-group">Current Bill: ₱<?= $row['current_bill'] ?></div>
+                <div class="form-group"><b>Account Balance:</b> ₱<?= $row['balance'] ?></div>
+                <div class="form-group"><b>Current Bill:</b> ₱<?= $row['current_bill'] ?></div>
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
             </div>
         </div>
