@@ -1,62 +1,109 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #DDF1F3;
-    color: #173B7E;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav{
-    margin-top: 75px;
-    margin-left: 45vw;
-    margin-right: 5vw;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #555;
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    height: 100vh;
+    margin-left: 10vw;
+    height: 95dvh;
+    margin-top: 5dvh;
+}
+
+.sidebar > img{
+    width: 100%;
+    padding: 15px;
+}
+
+.sidebar .picture {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.content {
+    flex: 1;
+    padding: 40px 40px 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 30px;
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-    justify-content: space-around;
-    /* background-color: #333; */
-    padding: 10px;
-    list-style-type: none;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #173B7E;
     text-decoration: none;
-    padding: 15px 20px;
-    border-radius: 15px;
-    transition: background-color .5s, color .5s;
-    font-weight: bold;
-    border: #173B7E solid 1px;
+    color: #ddd;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-.container, .main, form {
-    margin: 50px auto;
-    padding: 90px 0px 90px 60px;
-    width: 50%;
-    background-color: #8AD110;
-    border-radius: 50px;
-
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: white;
+    color: black;
 }
 
-h1{
-    font-size: 8em;
-    margin: 0;
-}
-
-p{
-    font-size: 2.5em;
-    margin: 0;
-}
-
-input, button {
-    padding: 10px;
+.main {
+    background-color: white;
     width: 100%;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: none;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    text-align: left;
 }
 
-nav ul li a:hover{
-    color: #DDF1F3;
-    background-color:  #173B7E;
+.main h1 {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.main p {
+    font-size: 2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.bottom-button {
+    background-color: #777;
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 30px;
 }
