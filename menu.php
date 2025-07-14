@@ -19,7 +19,7 @@ if (!isLoggedIn()) header("Location: login.php");
             <ul>
                 <li><a href="menu.php" class="active">Home</a></li>
                 <li><a href="balance.php">Bills</a></li>
-                <li><a href="usage.php">Enter Usage</a></li>
+                <li><a href="usage.php">Usage</a></li>
                 <li><a href="payment.php">Payment</a></li>
                 <li><a href="load.php">Load</a></li>
                 <li><a href="logout.php">Logout</a></li>
