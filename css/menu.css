@@ -9,6 +9,9 @@ body {
     background-image: url('../assets/bg_pic_1.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.container{
     display: flex;
 }
 
@@ -124,4 +127,44 @@ nav ul li a.active {
     border-radius: 0 100px 100px 0;
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 150px;
+    background-color:  #173B7E;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+footer p{
+    margin: 0;
+}
+#contact{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#iconGrid{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    justify-content: center;
+}
+.icon{
+    display: flex;
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+}
+#facebook{
+    background-color: #4267B2;
+}
+#instagram{
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+}
+#youtube{
+    background-color: #FF0000;
 }
