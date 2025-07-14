@@ -35,13 +35,6 @@ body {
     height: 100%;
 }
 
-.picture {
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
 .content {
     flex: 1;
     padding: 0 40px;

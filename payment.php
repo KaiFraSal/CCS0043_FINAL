@@ -54,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <nav>
                 <ul>
                     <li><a href="menu.php">Home</a></li>
-                    <li><a href="balance.php" class="active">Bills</a></li>
+                    <li><a href="balance.php">Bills</a></li>
                     <li><a href="usage.php">Usage</a></li>
-                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="payment.php" class="active">Payment</a></li>
                     <li><a href="load.php">Load</a></li>
                 </ul>
             </nav>
@@ -75,6 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="amount">Enter Exact Payment:</label>
                     <input type="number" step="0.01" name="amount" id="amount" required>
                     <button type="submit">Pay Now</button>
+
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <button type="submit">Login</button>
                 </form> 
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
             </div>
