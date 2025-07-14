@@ -55,8 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <ul>
                     <li><a href="menu.php">Home</a></li>
                     <li><a href="balance.php" class="active">Bills</a></li>
+                    <li><a href="usage.php">Usage</a></li>
                     <li><a href="payment.php">Payment</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="load.php">Load</a></li>
                 </ul>
             </nav>
         </div>
