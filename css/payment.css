@@ -166,7 +166,7 @@ nav a.active {
     font-size: 15px;
     font-weight: bold;
     font-style: italic;
-    background-color: #375305;
+    background-color: rgb(204, 2, 2);
 }
 
 label {

@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
     <form method="POST">
         <h2>Enter Load Amount:</h2>
-        <input type="number" name="amount" required>
+        <input type="number" name="amount" min="0" required>
         <button type="submit">Load</button>
     </form>
 

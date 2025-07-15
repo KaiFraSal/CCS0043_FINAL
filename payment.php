@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
 </header>
 
-
         <div class="main">
             <div class="statement">
                 <h1>Water Bill Payment</h1>
@@ -74,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
                 <form method="POST">
                     <label for="amount">Enter Exact Payment:</label>
-                    <input type="number" step="0.01" name="amount" id="amount" required>
+                    <input type="number" step="0.01" name="amount" id="amount" min="0" required>
                     <button type="submit" class="pay-btn">Pay Now</button>
                 </form> 
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
