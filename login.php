@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>MayPay Login</title>
 </head>
 <body>
@@ -34,5 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if (isset($error)) echo "<p>$error</p>"; ?>
         </form>
     </div>
+
 </body>
 </html>

@@ -8,10 +8,11 @@ if (!isLoggedIn()) header("Location: login.php");
 <head>
     <link rel="stylesheet" href="css/menu.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MayPay Menu</title>
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="sidebar">
             <img src="assets/CCS0043_Finals_Logo_Menu.png" alt="logo">
         </div>
@@ -29,31 +30,49 @@ if (!isLoggedIn()) header("Location: login.php");
             </nav>
 
             <div class="main">
-                <h1><scan class="blue">May<scan class="green">Pay</h1><br>
+                <h1>
+                    <span class="blue">May</span><span class="green">Pay</span>
+                </h1>
                 <p>Welcome to your water bill management system.</p>
             </div>
 
             <div class="bottom-button">MayPay is a platform for easy and secure Maynilad water bill payments.</div>
         </div>
     </div>
-
+   
     <footer>
-        <div>
-            <p id="contact">Contact Us!</p>
-            <p>Email: MayPay@sample.com</p>
-            <p>Address: Muntinlupa, Alabang</p>
-            <p>Number: 09XX-XXX-XXXX</p>
+        
+        
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <div class="contact-info">
+                <p><strong>📧 Email:</strong> MayPay@sample.com</p>
+                <p><strong>📍 Address:</strong> Muntinlupa, Alabang</p>
+                <p><strong>📞 Hotline:</strong> 09XX-XXX-XXXX</p>
+                <p><strong>💧 Emergency:</strong> 1627</p>
+            </div>
         </div>
-        <div>
-            <p>©2025</p>
-            <p>This site is created for educational purpose only</p>
+        
+        <div class="footer-section company-info">
+            <div class="year">©2025</div>
+            <p>Maynilad Water Services, Inc.</p>
+            <p class="disclaimer">This site is created for educational purpose only</p>
+            <p>Committed to providing safe, potable water and efficient wastewater services</p>
         </div>
-        <div>
-            <p>Don't forget to follow us!</p>
-            <div id="iconGrid">
-                <div id="facebook" class="icon"><img src="assets/facebook-logo-24.png" alt=""></div>
-                <div id="instagram" class="icon"><img src="assets/instagram-alt-logo-24.png" alt=""></div>
-                <div id="youtube" class="icon"><img src="assets/youtube-logo-24.png" alt=""></div>
+        
+        <div class="footer-section social-section">
+            <h3>Stay Connected</h3>
+            <p>Follow us for updates and announcements</p>
+            <div class="social-grid">
+                <div id="facebook" class="social-icon">
+                    <img src="assets/facebook-logo-24.png" alt="Facebook">
+                </div>
+                <div id="instagram" class="social-icon">
+                    <img src="assets/instagram-alt-logo-24.png" alt="Instagram">
+                </div>
+                <div id="youtube" class="social-icon">
+                    <img src="assets/youtube-logo-24.png" alt="YouTube">
+                </div>
             </div>
         </div>
     </footer>

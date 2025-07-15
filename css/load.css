@@ -37,13 +37,14 @@ input[type="number"] {
     padding: 5px;
 }
 
-p {
+.message {
     margin-top: 40px;
     padding: 10px;
     color: white;
     border-radius: 10px;
     font-weight: bold;
     font-style: italic;
+    background-color: #375305;
 }
 
 

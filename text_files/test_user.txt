@@ -1,2 +1,2 @@
 INSERT INTO users (username, password, balance, current_bill)
-VALUES ('testuser', '1234', 1000.00, 250.00);
+VALUES ('Sample_Name', 'samplepass123', 0.00, 0.00);

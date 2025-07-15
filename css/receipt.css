@@ -5,13 +5,16 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    height: 100dvh;
+    font-family: Inter, sans-serif;
+    min-height: 100dvh;
     display: flex;
+    flex-direction: column; 
     background-image: url('../assets/bg_pic_1.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 }
+
 
 .sidebar {
     width: 350px;
@@ -50,64 +53,95 @@ body {
     margin-top: 40px;
 }
 
-.logo {
+/* LOGO + NAVBAR */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-box {
+.logo-img {
     width: 40px;
     height: 40px;
+    object-fit: cover;
     background-color: #111;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.7rem;
     border-radius: 6px;
 }
 
-.logo-box > img{
-    width: 100%;
-    height: 100%;
-}
-
-.logo-text {
-    color: white;
+.logo-label {
     font-size: 0.85rem;
     background-image: linear-gradient(to bottom right, #6594BB, #DDF1F3);
-    padding: 4px;
+    padding: 4px 8px;
     border-radius: 10px;
+    color: #1e3c72;
 }
 
-nav ul {
-    list-style: none;
+/* NAVIGATION BAR */
+nav {
     display: flex;
-    gap: 30px;
+    align-items: center; 
+    justify-content: right;
+    margin-bottom: 0;     
 }
 
-nav ul li a {
+
+
+/* Navigation menu items */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 13px 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    padding: 10px 20px;
     text-decoration: none;
-    color: #ccc;
-    padding: 5px 15px;
-    border-radius: 8px;
+    color: #1e3c72;
+    border-radius: 25px;
     font-weight: 500;
-    transition: 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.6);
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-    background-color: white;
-    color: black;
+nav a:hover {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+}
+
+nav a.active {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
 }
 
 .main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-top: 30px; 
+    padding: 0 40px;
     background-color: transparent;
-    color: white;
 }
+
 
 .main h1 {
     font-size: 2.5rem;

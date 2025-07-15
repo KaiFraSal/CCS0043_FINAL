@@ -26,29 +26,29 @@ $row = $result->fetch_assoc();
 <html>
 <head>
     <link rel="stylesheet" href="css/receipt.css">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Receipt - MayPay</title>
 </head>
 <body>
-    <div class="content">
-        <div class="header">
-            <div class="logo">
-                <div class="logo-box"><img src="assets/CCS0043_Finals_Logo.png" alt="logo"></div>
-                <div class="logo-text">
-                    <strong>MayPay</strong><br>
-                    <small>Payment App</small>
-                </div>
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="assets/CCS0043_Finals_Logo.png" alt="logo" class="logo-img">
+            <div class="logo-label">
+                <strong>MayPay</strong><br>
+                <small>Payment App</small>
             </div>
-
-            <nav>
-                <ul>
-                    <li><a href="menu.php">Home</a></li>
-                    <li><a href="balance.php">Bills</a></li>
-                    <li><a href="usage.php">Usage</a></li>
-                    <li><a href="payment.php">Payment</a></li>
-                    <li><a href="load.php">Load</a></li>
-                </ul>
-            </nav>
         </div>
+
+        <nav>
+            <ul>
+                <li><a href="menu.php">Home</a></li>
+                <li><a href="balance.php">Bills</a></li>
+                <li><a href="usage.php">Usage</a></li>
+                <li><a href="payment.php" class="active">Payment</a></li>
+                <li><a href="load.php">Load</a></li>
+            </ul>
+        </nav>
+    </header>
 
         <div class="main">
             <div class="statement">
