@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" class="pay-btn">Compute</button>
                 </form> 
 
-                <?php if (isset($message)) echo "<p>$message</p>"; ?>
+                <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
 
                 <a href="menu.php"><button class="submit-btn">Back to Menu</button></a>
             </div>
